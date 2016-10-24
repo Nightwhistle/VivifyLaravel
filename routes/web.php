@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+
+Route::get('/home', ['middleware' => 'home:Parameter', function () {
+    return view('home')->with('username', 'Sergej');
+}]);
