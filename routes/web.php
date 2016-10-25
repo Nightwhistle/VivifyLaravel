@@ -13,10 +13,6 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/home', ['middleware' => 'home:Parameter', function () {
-    return view('home')->with('username', 'Sergej');
-}]);
-
 Route::get('/insert', 'UsersController@insert');
 
 Auth::routes();

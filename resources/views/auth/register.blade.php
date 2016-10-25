@@ -70,8 +70,11 @@
                             <label for="country" class="col-md-4 control-label">Country</label>
 
                             <div class="col-md-6">
-                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}" required autofocus>
-
+                                <select id="country" type="text" class="form-control" name="country" value="{{ old('country') }}" required autofocus>
+                                    @foreach($countries as $country)
+                                        <option value={{$country}}>{{$country}}</option>
+                                    @endforeach
+                                </select>
                                 @if ($errors->has('country'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('country') }}</strong>
